@@ -54,7 +54,7 @@ module.exports = {
       provider: () =>
         new HDWalletProvider({
           privateKeys: private_keys,
-          providerOrUrl: `https://matic-mumbai.chainstacklabs.com`, //https://polygon-mainnet.g.alchemy.com/v2/Q6IUFAk2I6AYm0ru1Bgz-Io5VCOZ7GIk
+          providerOrUrl: `https://matic-mumbai.chainstacklabs.com`,
         }),
       network_id: 80001, // mumbai's id
       confirmations: 2, // # of confs to wait between deployments. (default: 0)
@@ -65,7 +65,7 @@ module.exports = {
       provider: () =>
         new HDWalletProvider({
           privateKeys: private_keys,
-          providerOrUrl: `https://polygon-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_API_KEY}`, //
+          providerOrUrl: `https://polygon-mainnet.g.alchemy.com/v2/${process.env.SECRET_API_KEY}`, //
         }),
       network_id: 137, // mumbai's id
       confirmations: 2, // # of confs to wait between deployments. (default: 0)
@@ -109,12 +109,13 @@ module.exports = {
     solc: {
       version: "0.7.6", // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
-      settings: {          // See the solidity docs for advice about optimization and evmVersion
-       optimizer: {
-         enabled: true,
-         runs: 200
-       }
-      }
+      settings: {
+        // See the solidity docs for advice about optimization and evmVersion
+        optimizer: {
+          enabled: true,
+          runs: 200,
+        },
+      },
     },
   },
 
